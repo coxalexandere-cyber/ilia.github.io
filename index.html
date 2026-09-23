@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>فاکتور فروش فونزل</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#d71920"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<script src="html2canvas.min.js"></script>
+<style>
+@font-face{font-family:Vazirmatn;src:url(Vazirmatn-Regular.woff2) format("woff2");font-weight:400;font-display:swap}@font-face{font-family:Vazirmatn;src:url(Vazirmatn-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--bg:#f6f4f2;--cd:#fff;--tx:#1b1f2a;--mu:#6b7280;--bd:#e2ded9;--rd:#d71920;--nv:#1b2a5c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161c;--cd:#1e212a;--tx:#eceef3;--mu:#9aa1b0;--bd:#2f3340}}
+:root[data-theme="dark"]{--bg:#14161c;--cd:#1e212a;--tx:#eceef3;--mu:#9aa1b0;--bd:#2f3340}
+html,body{height:auto}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.7 Vazirmatn,Tahoma,sans-serif;padding-bottom:84px}
+.hd{display:flex;align-items:center;gap:10px;padding:12px 14px}.lg{background:var(--rd);color:#fff;padding:2px 12px 6px;border-radius:4px 4px 16px 16px;font-weight:700;letter-spacing:1px}
+main{padding:0 12px;max-width:720px;margin:auto}.cd{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:10px;margin-bottom:10px}
+input,button{font:inherit;color:var(--tx)}input{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px;width:100%;min-width:0}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.w{grid-column:1/3}.mu{color:var(--mu);font-size:12px;margin-top:6px}
+.tb{display:flex;gap:8px;margin-bottom:8px}.tb button{flex:1;padding:8px;border-radius:8px;border:1px solid var(--bd);background:var(--cd);font-weight:700}.tb .on{background:var(--rd);border-color:var(--rd);color:#fff}
+.r{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:10px;margin-top:8px}.r small{display:block;color:var(--mu)}
+.ct{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}.ct input{text-align:center;padding:6px}.ct .q{width:64px}.ct .d{width:82px}
+.ct button{border:1px solid var(--bd);background:var(--bg);border-radius:8px;padding:6px 12px}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;background:var(--cd);border-top:1px solid var(--bd);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))}
+.bar small{display:block;color:var(--mu);line-height:1.2}.bar>button,.act button{background:var(--nv);color:#fff;border:0;border-radius:8px;padding:10px 14px;font-weight:700}
+#md{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end}#md.on{display:flex}
+.sh{background:var(--bg);width:100%;max-height:94%;overflow-y:auto;border-radius:16px 16px 0 0;padding:12px 12px calc(12px + env(safe-area-inset-bottom,0px))}
+.sc{overflow-x:auto;margin:8px 0}.er{color:var(--rd);font-weight:700}.act{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.act button{flex:1 1 40%}
+#ri{width:100%;margin-top:10px;border-radius:8px}
+#inv{width:560px;background:#fff;color:#111;padding:16px;font-size:12px;direction:rtl}#inv table{width:100%;border-collapse:collapse;margin:8px 0}
+#inv th{background:#1b2a5c;color:#fff;padding:4px;font-size:11px}#inv td{border:1px solid #ccc;padding:4px;text-align:center}#inv td.n{text-align:right}
+.ih{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #d71920;padding-bottom:8px}.ih h2{margin:0}
+.by{background:#f3f4f8;padding:6px 8px;border-radius:6px}.tt{margin-right:auto;width:60%}.tt div{display:flex;justify-content:space-between;padding:2px 0}
+</style></head><body>
+<div class="hd"><b class="lg">FONZELL</b><b>فاکتور فروش فونزل</b></div>
+<main>
+<div class="cd"><div class="g"><input id="bn" placeholder="نام خریدار *"><input id="bp" placeholder="تلفن *" inputmode="tel"><input id="ba" class="w" placeholder="آدرس *"><input id="gd" type="number" min="0" max="100" placeholder="تخفیف کلی فاکتور (٪)" class="w"></div>
+<div class="mu">شماره فاکتور: <b id="no"></b> &nbsp; تاریخ: <b id="dt"></b></div></div>
+<div class="tb"><button data-t="K" class="on">Kids</button><button data-t="C">Creative</button><button data-t="A">همه محصولات</button></div>
+<input id="S" placeholder="جستجوی نام یا کد محصول">
+<div id="L"></div></main>
+<div class="bar"><div><small>مبلغ نهایی</small><b id="tot"></b></div><button id="pv">پیش‌نمایش فاکتور</button></div>
+<div id="md"><div class="sh"><button id="cl" style="background:none;border:0;padding:4px 0;color:var(--rd);font-weight:700;cursor:pointer">بستن ✕</button>
+<div class="sc" id="sc"><div id="inv"></div></div>
+<div class="act"><button id="im">ساخت تصویر فاکتور</button><button id="si" hidden>اشتراک تصویر</button><button id="tg">تلگرام</button><button id="wa">واتساپ</button><button id="et">ایتا</button><button id="cp">کپی متن</button></div>
+<img id="ri" hidden alt="تصویر فاکتور"><div class="mu" id="hn" hidden>برای ذخیره یا ارسال، روی تصویر نگه دارید.</div></div></div>
+<div id="ts" style="display:none;position:fixed;z-index:20;left:12px;right:12px;bottom:calc(90px + env(safe-area-inset-bottom,0px));background:#1b2a5c;color:#fff;padding:10px 14px;border-radius:10px;text-align:center"></div>
+<script>
+const P=`463086|K|خمیر بازی 10 رنگ خشک نشدنی (مجموعه جنگل) - 37 قطعه|8143750|18
+463087|K|خمیر بازی 7 رنگ خشک نشدنی (شخصیت های بامزه کوچک) - 34 قطعه|5175000|36
+463088|K|خمیر بازی 15 رنگ خشک نشدنی (شخصیت های بامزه بزرگ) - 82 قطعه|10312500|12
+463079|K|خمیر بازی 20 رنگ خشک نشدنی (سوپر ست) - 123 قطعه|13312500|6
+463076|K|خمیر بازی 6 رنگ خشک نشدنی (ست ماجراجویی) - 68 قطعه|6875000|36
+463032|K|خمیر شن رنگی (مجموعه استخر شن) - 32 قطعه|17375000|6
+463027|K|خمیر شن رنگی 1 کیلویی - 58 قطعه|9775000|12
+463024|K|خمیر شن رنگی 500 گرمی - 14 قطعه|6237500|24
+463033|K|مداد گرافیتی مشکی 4 عددی با 8 طرح فانتزی (بسته بندی وکیوم)|1261000|360
+463034|K|مداد گرافیتی مشکی 12 عددی با 8 طرح فانتزی|2808000|144
+463070|K|مداد گرافیتی مشکی سه وجهی (5 عدد) و مداد قرمز سه وجهی (1 عدد)|2015000|288
+463074|K|مداد رنگی مینی 6 عددی|1170000|288
+463073|K|مداد رنگی مینی 12 عددی|2860000|144
+463071|K|مداد رنگی 12 عددی شش وجهی (جعبه مقوایی)|4800000|144
+463072|K|مداد رنگی 24 عددی شش وجهی (جعبه مقوایی)|9600000|72
+463044|K|مداد رنگی 12 عددی شش وجهی (استوانه فلزی)|4940000|96
+463045|K|مداد رنگی 24 عددی شش وجهی (استوانه فلزی)|11500000|48
+463054|C|مداد رنگی 12 عددی (جعبه فلزی)|6280000|96
+463055|C|مداد رنگی 24 عددی (جعبه فلزی)|12300000|48
+463056|C|مداد رنگی 36 عددی (جعبه فلزی)|18200000|36
+463057|C|مداد رنگی 48 عددی (جعبه فلزی)|24850000|24
+463058|C|مداد رنگی 72 عددی (جعبه فلزی)|34360000|24
+463066|K|مداد آبرنگی 12 عددی سه وجهی (استوانه شفاف)|5265000|96
+463067|K|مداد آبرنگی 24 عددی سه وجهی (استوانه شفاف)|9789000|48
+463042|C|مداد آبرنگی 12 عددی سه وجهی (استوانه شفاف)|5642000|96
+463043|C|مداد آبرنگی 24 عددی سه وجهی (استوانه شفاف)|10335000|48
+463089|K|پاستل روغنی 12 رنگ|2062500|72
+463090|K|پاستل روغنی 24 رنگ|4000000|48
+463094|K|کرایون 8 رنگ دایناسوری|3587500|48
+463035|C|پاستل روغنی 12 رنگ|3618000|72
+463036|C|پاستل روغنی 18 رنگ|5413500|72
+463037|C|پاستل روغنی 25 رنگ|6885000|72
+463038|C|پاستل روغنی 36 رنگ|10840500|36
+463039|C|پاستل روغنی 50 رنگ|13729500|36
+463091|K|ست رنگ انگشتی قابل شست و شو 4 رنگ همراه با مهرهای اسفنجی|3437500|36
+463092|K|ست رنگ انگشتی قابل شست و شو 6 رنگ همراه با مهرهای اسفنجی|5525000|24
+463077|K|گواش 6 رنگ در ظرف های پازلی|3437500|36
+463078|K|گواش 12 رنگ در ظرف های پازلی|6512500|24
+463093|K|آبرنگ 8 رنگ با قرص های 40 میلیمتری و یک عدد قلم مو|5295000|48
+463040|C|آبرنگ 12 رنگ با قرص های 30 میلیمتری قابل تعویض و یک عدد قلم مو|5792000|48
+463041|C|آبرنگ 24 رنگ با قرص های 30 میلیمتری قابل تعویض و یک عدد قلم مو|9625000|24
+463095|K|لیوان پلاستیکی آبرنگ با قابلیت قفل شوندگی به ظرف آبرنگ|1450000|36
+463112|K|قرص آبرنگ تکی (12 رنگ اول)|512500|432
+463113|K|قرص آبرنگ تکی (12 رنگ دوم)|512500|432
+463084|K|چسب ماتیکی 10 گرمی - بسته 30 عددی|400000|360
+463061|K|چسب ماتیکی 20 گرمی - بسته 30 عددی|687500|240
+463028|C|چسب ماتیکی 10 گرمی - بسته 30 عددی|400000|360
+463029|C|چسب ماتیکی 20 گرمی - بسته 30 عددی|687500|240
+463021|C|نوار غلط گیر عرض 5 میلیمتر و طول 18 متر|3250000|144
+463022|C|چسب نواری نقطه ای عرض 5 میلیمتر و طول 10 متر (سازگار با محیط زیست)|4700000|144
+463023|C|نوار غلط گیر عرض 5 میلیمتر و طول 6 متر (سازگار با محیط زیست)|2625000|288
+463020|K|چسب نواری نقطه ای عرض 5 میلیمتر و طول 8 متر|3250000|144
+463013|K|قیچی کاردستی با الگوهای خاص (4 تیغ قابل تعویض، وکیوم)|6955000|72
+463011|K|قیچی ایمن طرح گلدفیش|1755000|240
+463012|K|قیچی ایمن طرح ماهی|1755000|240
+463010|K|قیچی با قفل ایمنی|2106000|240
+463014|K|قیچی قالب دار با غلاف ایمنی|2886000|240
+463015|K|قیچی جارودار|3003000|144
+463017|C|قیچی سازگار با محیط زیست|3367000|144
+463016|C|قیچی سوپر کات با تیغه تیتانیوم|5980000|144
+463018|C|قیچی چند کاره (قیچی + کاتر)|4875000|144
+463019|C|قیچی سازگار با محیط زیست با دسته ارگونومیک|3952000|144
+463004|K|ماژیک 12 رنگ با دو تیپ (مهردار و مخروطی)|6312500|96
+463005|K|ماژیک 1 + 11 (حاوی یک عدد ماژیک پاک کننده)|4750000|144
+463001|K|ماژیک 12 رنگ اسانس دار|3800000|144
+463000|K|ماژیک 12 رنگ جامبو قابل شستشو|7440000|72
+463006|K|ماژیک 12 رنگ سه وجهی قابل شستشو|6687500|72
+463002|K|ماژیک 12 رنگ قابل شستشو (Super Washable)|4175000|96
+3997|K|ماژیک 12 رنگ قابل شستشو (جعبه مقوایی)|3687500|144
+463003|C|ماژیک 12 رنگ با دو تیپ مخصوص پارچه|8950000|96
+463007|C|ماژیک 6 رنگ سه وجهی وایت برد|6312500|96
+463995|C|ماژیک 12 رنگ هایلایتر|6150000|120
+463996|C|ماژیک 12 رنگ با دو تیپ مخصوص اسکیس|9725000|72
+463998|C|ماژیک 12 رنگ سوپر براش|7962500|96
+463999|C|ماژیک 24 رنگ سوپر براش|15562500|36`.split('\n').map(l=>{const a=l.split('|');return{c:a[0],k:a[1],n:a[2],p:+a[3],t:+a[4]}});
+const Q={},D={},$=id=>document.getElementById(id),fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]),f=n=>fa(Math.round(n).toLocaleString('en-US')),
+E=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let T='K',F;
+no.textContent=[...crypto.getRandomValues(new Uint8Array(8))].map(b=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[b%32]).join('');
+dt.textContent=new Date().toLocaleDateString('fa-IR-u-ca-persian',{year:'numeric',month:'2-digit',day:'2-digit'});
+const O=['','یک','دو','سه','چهار','پنج','شش','هفت','هشت','نه','ده','یازده','دوازده','سیزده','چهارده','پانزده','شانزده','هفده','هجده','نوزده'],X=['','','بیست','سی','چهل','پنجاه','شصت','هفتاد','هشتاد','نود'],H=['','یکصد','دویست','سیصد','چهارصد','پانصد','ششصد','هفتصد','هشتصد','نهصد'],SC=['','هزار','میلیون','میلیارد'];
+const g3=g=>{const h=g/100|0,r=g%100,a=[];if(h)a.push(H[h]);if(r&&r<20)a.push(O[r]);else if(r)a.push(X[r/10|0]+(r%10?' و '+O[r%10]:''));return a.join(' و ')};
+const W=n=>{if(!n)return'صفر';const p=[];for(let i=0;n>0;i++,n=Math.floor(n/1000)){const g=n%1000;if(g)p.unshift(g3(g)+(SC[i]?' '+SC[i]:''))}return p.join(' و ')};
+const ln=p=>{const s=Q[p.c]*p.p,x=Math.round(s*(D[p.c]||0)/100);return{s,x,n:s-x}};
+const its=()=>P.filter(p=>Q[p.c]>0);
+const sum=()=>{const s=its().reduce((a,p)=>a+ln(p).n,0),x=Math.round(s*gp()/100);return{s,x,z:s-x}};
+const gp=()=>Math.min(100,Math.max(0,+gd.value||0));
+const chk=()=>!bn.value.trim()||!bp.value.trim()||!ba.value.trim()?'نام، تلفن و آدرس خریدار را وارد کنید.':its().length?'':'حداقل یک محصول انتخاب کنید.';
+const toast=m=>{ts.textContent=m;ts.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>ts.style.display='none',3000)};
+const upd=()=>tot.textContent=f(sum().z)+' ریال';
+function draw(){const s=S.value.trim().replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+L.innerHTML=P.filter(p=>s?(p.n+p.c).includes(s):T=='A'||p.k==T).map(p=>`<div class="r"><b>${fa(p.n)}</b><small>کد ${fa(p.c)} - ${f(p.p)} ریال - در کارتن: ${fa(p.t)}</small><div class="ct"><button data-c="${p.c}" data-a="-">−</button><input class="q" type="number" min="0" placeholder="۰" value="${Q[p.c]||''}" data-c="${p.c}" data-f="q"><button data-c="${p.c}" data-a="+">+</button><button data-c="${p.c}" data-a="ct">+ کارتن</button><input class="d" type="number" min="0" max="100" placeholder="تخفیف ٪" value="${D[p.c]||''}" data-c="${p.c}" data-f="d"></div></div>`).join('')||'<div class="mu">محصولی پیدا نشد.</div>'}
+L.oninput=e=>{const t=e.target,c=t.dataset.c;if(!c)return;(t.dataset.f=='d'?D:Q)[c]=Math.min(t.dataset.f=='d'?100:100000,Math.max(0,+t.value||0));upd()};
+L.onclick=e=>{const b=e.target.closest('button');if(!b)return;const c=b.dataset.c,p=P.find(x=>x.c==c),v=Q[c]||0;Q[c]=Math.max(0,b.dataset.a=='+'?v+1:b.dataset.a=='-'?v-1:v+p.t);b.parentNode.querySelector('.q').value=Q[c]||'';upd()};
+document.querySelector('.tb').onclick=e=>{const t=e.target.dataset.t;if(!t)return;T=t;S.value='';document.querySelectorAll('.tb button').forEach(b=>b.classList.toggle('on',b.dataset.t==t));draw()};
+S.oninput=draw;gd.oninput=upd;
+pv.onclick=()=>{const e=chk();if(e)return toast(e);ri.hidden=si.hidden=hn.hidden=true;
+const it=its(),m=sum();
+inv.innerHTML=`<div class="ih"><div><h2>فاکتور فروش</h2><div>شماره: ${no.textContent} &nbsp; تاریخ: ${fa(dt.textContent)}</div></div><b style="background:#d71920;color:#fff;padding:2px 14px 8px;border-radius:4px 4px 16px 16px;font-size:18px">FONZELL</b></div>
+<div class="by"><div>فروشنده: <b>فونزل</b></div><div>خریدار: <b>${E(bn.value)}</b> &nbsp; تلفن: ${fa(E(bp.value))}</div><div>آدرس: ${fa(E(ba.value))}</div></div>
+<table><tr><th>ردیف<th>کد<th>شرح کالا<th>تعداد<th>قیمت واحد<th>تخفیف<th>مبلغ</tr>${it.map((p,i)=>{const l=ln(p);return`<tr><td>${fa(i+1)}<td>${fa(p.c)}<td class="n">${fa(p.n)}<td>${fa(Q[p.c])}<td>${f(p.p)}<td>${l.x?f(l.x):'-'}<td>${f(l.n)}</tr>`}).join('')}</table>
+<div class="tt"><div><span>جمع ردیف ها</span><span>${f(m.s)}</span></div><div><span>تخفیف کلی (${fa(gp())}٪)</span><span>${f(m.x)}</span></div><div><b>مبلغ قابل پرداخت (ریال)</b><b>${f(m.z)}</b></div></div>
+<div class="by">به حروف: <b>${W(m.z)} ریال</b></div>`;md.classList.add('on');ts.style.display='none';sc.style.zoom=Math.min(1,(sc.parentNode.clientWidth-24)/560)};
+cl.onclick=()=>md.classList.remove('on');
+const ok=()=>{const e=chk();if(e)toast(e);return!e};
+const txt=()=>{const m=sum();return fa(`فاکتور فروش فونزل\nشماره: ${no.textContent} | تاریخ: ${dt.textContent}\nخریدار: ${bn.value} - ${bp.value}\nآدرس: ${ba.value}\n\n`+its().map((p,i)=>`${i+1}) ${p.n} (${p.c}) × ${Q[p.c]} = ${f(ln(p).n)}`).join('\n')+`\n\nتخفیف کلی: ${f(m.x)}\nمبلغ قابل پرداخت: ${f(m.z)} ریال\n(${W(m.z)} ریال)`)};
+const go=u=>{if(ok())window.open(u+encodeURIComponent(txt()),'_blank','noopener')};
+tg.onclick=()=>go('https://t.me/share/url?url=%20&text=');wa.onclick=()=>go('https://wa.me/?text=');et.onclick=()=>go('https://eitaa.com/share/url?text=');
+cp.onclick=async()=>{if(!ok())return;try{await navigator.clipboard.writeText(txt())}catch(x){const a=document.createElement('textarea');a.value=txt();document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}cp.textContent='کپی شد ✓';setTimeout(()=>cp.textContent='کپی متن',1500)};
+im.onclick=async()=>{if(!ok())return;im.disabled=true;try{const w=document.createElement('div');w.style.cssText='position:fixed;left:-2000px;top:0';w.appendChild(inv.cloneNode(true));document.body.appendChild(w);let c;try{c=await html2canvas(w.firstChild,{scale:2,backgroundColor:'#fff',scrollX:0,scrollY:0})}finally{w.remove()}ri.src=c.toDataURL('image/png');ri.hidden=hn.hidden=false;c.toBlob(b=>{F=new File([b],'invoice-'+no.textContent+'.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[F]}))si.hidden=false})}catch(x){toast('ساخت تصویر ناموفق بود.')}im.disabled=false};
+si.onclick=()=>navigator.share({files:[F]}).catch(()=>{});
+draw();upd();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>
